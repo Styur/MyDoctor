@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1c6d9; /* Pink Creamy background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #f1c6d9, #f0b5d2); /* Soft gradient background */
+    animation: gradientShift 5s ease infinite;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.envelope {
+    width: 200px;
+    height: 120px;
+    background-color: #f5e1a4;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    cursor: pointer;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    25% { transform: translate(-50%, -50%) scale(1.2); }
+    50% { transform: translate(-50%, -50%) scale(1); }
+    75% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.letter {
+    font-size: 18px;
+    color: #333;
+    background-color: #e8ecf0; /* Light pink background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+    display: none;
+    position: absolute; /* Change to absolute */
+    top: 0; /* Position it at the top of the screen */
+    left: 10%; /* Center horizontally */
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.letter.show {
+    opacity: 1;
+    transform: translateY(0); /* Slide up */
+}
+
+.letter-content {
+    background-color: #f5e1a4; /* Maya Blue background */
+    padding: 20px;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.letter-content p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Optional: Confetti effect */
+@keyframes confetti {
+    0% { top: -10px; opacity: 0; }
+    50% { top: 50%; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: #f4e006;
+    opacity: 0.8;
+    animation: fall 2s forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
